@@ -1,0 +1,18 @@
+
+
+DECLARE @fecha CHAR (12)
+DECLARE @path VARCHAR (100)
+DECLARE @name VARCHAR (20)
+
+--PRINT CONVERT (CHAR(5),GETDATE(),108)  DEVUELVE LA HORA QUE SE CREO
+
+--PRINT CONVERT (CHAR(8),GETDATE(),112  DEVUELVE LA FECHA QUE SE CREO
+SET @fecha = CONVERT (CHAR(8),GETDATE(),112) + REPLACE(CONVERT (CHAR(5),GETDATE(),108),':','')
+
+SET @path =  'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\Backup\CentroMedico'+@fecha+'.bak'
+
+SET @name = 'CentroMedico'+@fecha
+
+BACKUP DATABASE CentroMedico
+TO  DISK = @path
+WITH NO_COMPRESSION, NAME = @name

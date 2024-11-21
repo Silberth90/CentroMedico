@@ -1,0 +1,8 @@
+--DECLARE @num1 DECIMAL (9,2) = 20
+--DECLARE @num2 DECIMAL (9,2) = 30
+DECLARE @num1 VARCHAR (50)= 'HOLA ME LLAMO SILVER'
+DECLARE @num2 VARCHAR (50)= 'HOLA ME LLAMO SILVERP'
+--DECLARE @result DECIMAL (9,2)
+--SET @result = @num1 % @num2
+IF @num1 < @num2 
+	print 'SI ES MAYOR'
